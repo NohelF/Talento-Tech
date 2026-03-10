@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg-deep: #0a192f;
+    --bg-card: #112240;
+    --navy-light: #233554;
+    --cyan: #64ffda;
+    --cyan-glow: rgba(100, 255, 218, 0.1);
+    --white-text: #e6f1ff;
+    --grey-text: #8892b0;
+    --accent: #00f2ff;
+    --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --hover-gold: #fbbf24; /* Maybe use something else? */
+    --p-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--grey-text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--white-text);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+input, select, button {
+    font-family: inherit;
+    border: none;
+    outline: none;
+}
+
+/* --- Layout --- */
+
+header {
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--cyan);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white-text);
+}
+
+.nav-link:hover {
+    color: var(--cyan);
+}
+
+/* --- Hero --- */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('hero_technology_education_bg_1773109652711.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1.5rem;
+    color: var(--white-text);
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    color: var(--grey-text);
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid var(--cyan);
+    background: transparent;
+    color: var(--cyan);
+}
+
+.btn:hover {
+    background: var(--cyan-glow);
+    box-shadow: 0 0 15px var(--cyan-glow);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--cyan);
+    color: var(--bg-deep);
+}
+
+.btn-primary:hover {
+    background: rgba(100, 255, 218, 0.8);
+    transform: translateY(-3px);
+}
+
+/* --- Search & Filters --- */
+
+.filters-section {
+    padding: 4rem 5%;
+    background: var(--bg-deep);
+}
+
+.filter-bar {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    box-shadow: var(--p-shadow);
+    border: 1px solid rgba(100, 255, 218, 0.05);
+    margin-top: -80px;
+    position: relative;
+    z-index: 10;
+}
+
+.filter-group {
+    flex: 1 1 200px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-group input, .filter-group select {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--navy-light);
+    color: var(--white-text);
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.filter-group input:focus, .filter-group select:focus {
+    border-color: var(--cyan);
+}
+
+/* --- Area Cards --- */
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 4rem 5%;
+}
+
+.area-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(100, 255, 218, 0.05);
+    cursor: pointer;
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+    box-shadow: var(--p-shadow);
+}
+
+.area-icon {
+    font-size: 2.5rem;
+    color: var(--cyan);
+    margin-bottom: 1rem;
+}
+
+/* --- Bootcamps & Courses --- */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.bootcamps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+    padding: 0 5% 4rem;
+}
+
+.bootcamp-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.bootcamp-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.bootcamp-content {
+    padding: 2rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    background: var(--cyan-glow);
+    color: var(--cyan);
+    margin-bottom: 1rem;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 5% 4rem;
+}
+
+.course-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(100, 255, 218, 0.05);
+    transition: var(--transition);
+}
+
+.course-card:hover {
+    border-color: var(--cyan);
+}
+
+/* --- Roadmap --- */
+
+.roadmap-section {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.roadmap-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    max-width: 1000px;
+    margin: 4rem auto 0;
+}
+
+.roadmap-container::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: var(--navy-light);
+    z-index: 1;
+}
+
+.roadmap-step {
+    position: relative;
+    z-index: 2;
+    background: var(--bg-deep);
+    padding: 1rem;
+    flex: 1;
+}
+
+.step-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 3px solid var(--cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-weight: 700;
+    color: var(--cyan);
+    font-size: 1.2rem;
+}
+
+/* --- Benefits --- */
+
+.benefits-section {
+    padding: 4rem 5%;
+    background: var(--navy-light);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-item {
+    text-align: center;
+}
+
+/* --- Footer & CTA --- */
+
+.final-cta {
+    padding: 6rem 5%;
+    text-align: center;
+    background: linear-gradient(var(--bg-deep), #001220);
+}
+
+footer {
+    padding: 4rem 5%;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Contact Section & Form Improvements --- */
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--navy-light);
+    color: var(--white-text);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    min-height: 150px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+textarea:focus {
+    border-color: var(--cyan);
+    outline: none;
+}
+
+#contacto .filter-group input {
+    transition: var(--transition);
+}
+
+#contacto .filter-group input:focus {
+    border-color: var(--cyan);
+}
+
+/* --- Responsive fixes --- */
+@media (max-width: 768px) {
+    .filter-bar {
+        margin-top: 2rem;
+    }
+    .roadmap-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .roadmap-container::before {
+        display: none;
+    }
+}

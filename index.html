@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talento Tech - Aprende tecnología para el futuro</title>
+    <meta name="description"
+        content="Talento Tech ofrece bootcamps y programas de formación en TIC para impulsar tu carrera tecnológica.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">TALENTO TECH</div>
+        <nav class="nav-links">
+            <a href="#cursos" class="nav-link">Cursos</a>
+            <a href="#bootcamps" class="nav-link">Bootcamps</a>
+            <a href="#areas" class="nav-link">Áreas</a>
+            <a href="#benefits" class="nav-link">Beneficios</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+        </nav>
+        <button class="btn btn-border">Iniciar Sesión</button>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero reveal">
+            <h1>Talento Tech - Aprende tecnología para el futuro</h1>
+            <p>Impulsa tu carrera con nuestros bootcamps y programas de formación en Tecnologías de la Información y las
+                Comunicaciones (TIC). Especialízate en las habilidades más demandadas.</p>
+            <div class="hero-btns">
+                <a href="#cursos" class="btn btn-primary">Explorar cursos</a>
+                <a href="#areas" class="btn" style="margin-left: 1rem;">Ver áreas</a>
+            </div>
+        </section>
+
+        <!-- SEARCH AND FILTER BAR -->
+        <section class="filters-section reveal">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>Buscar</label>
+                    <input type="text" placeholder="Ej: Python, React, Data...">
+                </div>
+                <div class="filter-group">
+                    <label>Área de Tecnología</label>
+                    <select>
+                        <option>Todas las áreas</option>
+                        <option>Software Development</option>
+                        <option>Artificial Intelligence</option>
+                        <option>Cybersecurity</option>
+                        <option>Data Science</option>
+                        <option>Cloud Computing</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Nivel</label>
+                    <select>
+                        <option>Todos los niveles</option>
+                        <option>Principiante</option>
+                        <option>Intermedio</option>
+                        <option>Avanzado</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Formato</label>
+                    <select>
+                        <option>Todos los formatos</option>
+                        <option>Online</option>
+                        <option>Híbrido</option>
+                        <option>Presencial</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGY AREAS -->
+        <section id="areas" class="reveal" style="padding: 4rem 5% 0;">
+            <h2 class="section-title">Áreas de Especialización</h2>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <i data-lucide="code" class="area-icon"></i>
+                    <h3>Software Development</h3>
+                    <p>Web, Mobile, Fullstack.</p>
+                </div>
+                <div class="area-card">
+                    <i data-lucide="brain-circuit" class="area-icon"></i>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Machine Learning, LLMs.</p>
+                </div>
+                <div class="area-card">
+                    <i data-lucide="shield-check" class="area-icon"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>Red Team, Blue Team.</p>
+                </div>
+                <div class="area-card">
+                    <i data-lucide="database" class="area-icon"></i>
+                    <h3>Data Science</h3>
+                    <p>Big Data, Análisis.</p>
+                </div>
+                <div class="area-card">
+                    <i data-lucide="cloud" class="area-icon"></i>
+                    <h3>Cloud Computing</h3>
+                    <p>AWS, Azure, GCP.</p>
+                </div>
+                <div class="area-card">
+                    <i data-lucide="palette" class="area-icon"></i>
+                    <h3>UX/UI Design</h3>
+                    <p>User Experience, Interfaces.</p>
+                </div>
+                <div class="area-card">
+                    <i data-lucide="settings" class="area-icon"></i>
+                    <h3>DevOps</h3>
+                    <p>CI/CD, Kubernetes.</p>
+                </div>
+                <div class="area-card">
+                    <i data-lucide="radio" class="area-icon"></i>
+                    <h3>Networking</h3>
+                    <p>Infraestructura, Redes.</p>
+                </div>
+                <div class="area-card">
+                    <i data-lucide="trending-up" class="area-icon"></i>
+                    <h3>Digital Marketing</h3>
+                    <p>Growth, Estrategia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED BOOTCAMPS -->
+        <section id="bootcamps" class="reveal" style="padding: 6rem 5% 0;">
+            <h2 class="section-title">Bootcamps Destacados</h2>
+            <div class="bootcamps-grid">
+                <div class="bootcamp-card">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"
+                        alt="Fullstack Bootcamp">
+                    <div class="bootcamp-content">
+                        <span class="badge">Especialización</span>
+                        <h3>Fullstack Developer Pro</h3>
+                        <p>Domina el desarrollo web moderno desde el frontend hasta el backend. Aprende React, Node.js y
+                            bases de datos NoSQL.</p>
+                        <div style="margin: 1.5rem 0; font-size: 0.85rem; color: var(--cyan);">
+                            <span>📍 Híbrido</span> • <span>⌛ 24 Semanas</span> • <span>📶 Avanzado</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Ver programa</button>
+                    </div>
+                </div>
+                <div class="bootcamp-card">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80"
+                        alt="AI Bootcamp">
+                    <div class="bootcamp-content">
+                        <span class="badge">Especialización</span>
+                        <h3>Machine Learning Specialist</h3>
+                        <p>Aprende a construir modelos predictivos, redes neuronales y aplicaciones de IA generativa con
+                            Python y TensorFlow.</p>
+                        <div style="margin: 1.5rem 0; font-size: 0.85rem; color: var(--cyan);">
+                            <span>📍 Online</span> • <span>⌛ 20 Semanas</span> • <span>📶 Avanzado</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Ver programa</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEARNING PATH SECTION -->
+        <section class="roadmap-section reveal">
+            <h2 class="section-title">Tu Ruta de Aprendizaje</h2>
+            <p>Diseñamos un camino claro para que pases de cero a experto en la industria TIC.</p>
+            <div class="roadmap-container">
+                <div class="roadmap-step">
+                    <div class="step-circle">01</div>
+                    <h4>Principiante</h4>
+                    <p>Fundamentos y lógica de programación.</p>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-circle" style="border-style: dotted;">02</div>
+                    <h4>Intermedio</h4>
+                    <p>Entornos de desarrollo y frameworks.</p>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-circle">03</div>
+                    <h4>Avanzado</h4>
+                    <p>Arquitectura, escalabilidad y testing.</p>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-circle" style="background: var(--cyan); color: var(--bg-deep);">04</div>
+                    <h4>Bootcamp</h4>
+                    <p>Especialización intensiva y portafolio.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FULL COURSE CATALOG -->
+        <section id="cursos" class="reveal" style="padding: 4rem 5% 0;">
+            <h2 class="section-title">Catálogo Completo</h2>
+            <div class="course-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <span class="badge">Software</span>
+                    <h3>Introducción a Python</h3>
+                    <p>Aprende los conceptos básicos del lenguaje más versátil.</p>
+                    <div style="font-size: 0.8rem; margin: 1rem 0;">
+                        <span>⌛ 40 hrs</span> | <span>📶 Inicial</span> | <span>🌐 Online</span>
+                    </div>
+                    <button class="btn" style="width:100%">Inscribirme</button>
+                </div>
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <span class="badge">Cloud</span>
+                    <h3>AWS Cloud Essentials</h3>
+                    <p>Fundamentos de computación en la nube y servicios AWS.</p>
+                    <div style="font-size: 0.8rem; margin: 1rem 0;">
+                        <span>⌛ 32 hrs</span> | <span>📶 Inicial</span> | <span>🌐 Online</span>
+                    </div>
+                    <button class="btn" style="width:100%">Inscribirme</button>
+                </div>
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <span class="badge">Data</span>
+                    <h3>Visualización con Power BI</h3>
+                    <p>Crea dashboards impactantes y toma decisiones basadas en datos.</p>
+                    <div style="font-size: 0.8rem; margin: 1rem 0;">
+                        <span>⌛ 25 hrs</span> | <span>📶 Intermedio</span> | <span>🏢 Presencial</span>
+                    </div>
+                    <button class="btn" style="width:100%">Inscribirme</button>
+                </div>
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <span class="badge">Cyber</span>
+                    <h3>Hacking Ético 101</h3>
+                    <p>Conceptos de seguridad informática y pruebas de penetración.</p>
+                    <div style="font-size: 0.8rem; margin: 1rem 0;">
+                        <span>⌛ 60 hrs</span> | <span>📶 Intermedio</span> | <span>📍 Híbrido</span>
+                    </div>
+                    <button class="btn" style="width:100%">Inscribirme</button>
+                </div>
+                <!-- Course 5 -->
+                <div class="course-card">
+                    <span class="badge">UX/UI</span>
+                    <h3>Diseño de Interfaces (Figma)</h3>
+                    <p>Diseña prototipos modernos y centrados en el usuario.</p>
+                    <div style="font-size: 0.8rem; margin: 1rem 0;">
+                        <span>⌛ 30 hrs</span> | <span>📶 Inicial</span> | <span>🌐 Online</span>
+                    </div>
+                    <button class="btn" style="width:100%">Inscribirme</button>
+                </div>
+                <!-- Course 6 -->
+                <div class="course-card">
+                    <span class="badge">DevOps</span>
+                    <h3>Docker & Containers</h3>
+                    <p>Orquestación y despliegue de microservicios eficientes.</p>
+                    <div style="font-size: 0.8rem; margin: 1rem 0;">
+                        <span>⌛ 45 hrs</span> | <span>📶 Avanzado</span> | <span>🌐 Online</span>
+                    </div>
+                    <button class="btn" style="width:100%">Inscribirme</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFITS SECTION -->
+        <section id="benefits" class="benefits-section reveal">
+            <h2 class="section-title">Por qué elegir Talento Tech</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i data-lucide="target" style="color:var(--cyan); margin-bottom: 1rem;"></i>
+                    <h3>Enfoque en la Industria</h3>
+                    <p>Currículos diseñados por expertos que trabajan en las mejores tech companies.</p>
+                </div>
+                <div class="benefit-item">
+                    <i data-lucide="award" style="color:var(--cyan); margin-bottom: 1rem;"></i>
+                    <h3>Certificación Avalada</h3>
+                    <p>Recibe un certificado que respalda tus conocimientos técnicos ante reclutadores.</p>
+                </div>
+                <div class="benefit-item">
+                    <i data-lucide="folder-kanban" style="color:var(--cyan); margin-bottom: 1rem;"></i>
+                    <h3>Proyectos Prácticos</h3>
+                    <p>Construye un portafolio real con casos de uso del mundo empresarial actual.</p>
+                </div>
+                <div class="benefit-item">
+                    <i data-lucide="rocket" style="color:var(--cyan); margin-bottom: 1rem;"></i>
+                    <h3>Job-ready Skills</h3>
+                    <p>Te preparamos con las habilidades blandas y técnicas para tu primer empleo IT.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CALL TO ACTION -->
+        <section class="final-cta reveal">
+            <h2>Empieza tu camino en tecnología hoy mismo</h2>
+            <p>Únete a los miles de estudiantes que ya están transformando su futuro con Talento Tech.</p>
+            <button class="btn btn-primary" style="margin-top: 2rem; font-size: 1.2rem; padding: 1.2rem 3rem;">Explorar
+                todos los programas</button>
+        </section>
+        <!-- CONTACT SECTION -->
+        <section id="contacto" class="reveal" style="padding: 6rem 5%; background: var(--bg-card);">
+            <h2 class="section-title">¿Tienes preguntas? Contáctanos</h2>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <form action="https://formspree.io/f/xkoqjwjj" method="POST"
+                    style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div class="filter-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="filter-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="filter-group">
+                        <label>Mensaje</label>
+                        <textarea name="message" placeholder="¿En qué podemos ayudarte?"
+                            style="width: 100%; padding: 0.8rem; background: var(--navy-light); color: var(--white-text); border-radius: 4px; border: 1px solid transparent; min-height: 150px; font-family: inherit;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="align-self: flex-start; width: 100%;">Enviar
+                        Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="reveal">
+        <div>
+            <div class="logo">TALENTO TECH</div>
+            <p style="max-width:300px; margin-top: 1rem;">Educación de alto impacto para los profesionales del mañana.
+            </p>
+        </div>
+        <div>
+            <h4>Plataforma</h4>
+            <ul style="margin-top: 1rem; font-size: 0.9rem;">
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">Bootcamps</a></li>
+                <li><a href="#">Mentores</a></li>
+                <li><a href="#">Alianzas</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Comunidad</h4>
+            <ul style="margin-top: 1rem; font-size: 0.9rem;">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Casos de éxito</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Newsletter</h4>
+            <p style="font-size: 0.85rem; margin: 1rem 0;">Recibe las últimas noticias de tecnología.</p>
+            <form action="https://formspree.io/f/xkoqjwjj" method="POST" style="display:flex; gap: 0.5rem;">
+                <input type="email" name="email" placeholder="Email" required
+                    style="padding: 0.5rem; background: var(--navy-light); color: white; border-radius: 4px; border: none; outline: none; flex-grow: 1;">
+                <button type="submit" class="btn btn-primary">Ok</button>
+            </form>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "m3tWQUtEq7x7Uqb5F3QLR"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
+</body>
+
+</html>
