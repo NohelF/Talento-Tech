@@ -4,62 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talento Tech - Aprende tecnología para el futuro</title>
+    <title>Talento Tech - Educación de Alto Impacto en TIC</title>
     <meta name="description"
-        content="Talento Tech ofrece bootcamps y programas de formación en TIC para impulsar tu carrera tecnológica.">
+        content="Impulsa tu carrera tecnológica con nuestros bootcamps y programas de formación especializada en Talent Tech.">
+    
+    <!-- Design System & Icons -->
     <link rel="stylesheet" href="style.css">
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">TALENTO TECH</div>
-        <nav class="nav-links">
-            <a href="#cursos" class="nav-link">Cursos</a>
-            <a href="#bootcamps" class="nav-link">Bootcamps</a>
-            <a href="#areas" class="nav-link">Áreas</a>
-            <a href="#benefits" class="nav-link">Beneficios</a>
-            <a href="#comentarios" class="nav-link">Comentarios</a>
-            <a href="#contacto" class="nav-link">Contacto</a>
-        </nav>
-        <div id="user-nav" class="user-controls">
-            <!-- Dynamic Content based on Auth -->
-            <button id="btn-show-auth" class="btn btn-border">Iniciar Sesión</button>
-            <div id="user-profile" class="hidden">
-                 <span id="user-display-name" style="color: var(--cyan); margin-right: 1rem; font-size: 0.9rem;"></span>
-                 <button id="btn-logout" class="btn btn-border" style="padding: 0.5rem 1rem;">Salir</button>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <a href="#" class="logo">
+            <i data-lucide="zap" class="logo__icon"></i>
+            <span>TALENTO TECH</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav" aria-label="Navegación principal">
+            <a href="#cursos" class="nav__link">Cursos</a>
+            <a href="#bootcamps" class="nav__link">Bootcamps</a>
+            <a href="#areas" class="nav__link">Áreas</a>
+            <a href="#benefits" class="nav__link">Beneficios</a>
+            <a href="#comentarios" class="nav__link">Comunidad</a>
+            <a href="#contacto" class="nav__link">Contacto</a>
+            
+            <div id="user-nav" class="user-controls">
+                <button id="btn-show-auth" class="btn">Iniciar Sesión</button>
+                <div id="user-profile" class="hidden">
+                     <span id="user-display-name" style="color: var(--clr-cyan); margin-right: 1rem; font-size: 0.9rem;"></span>
+                     <button id="btn-logout" class="btn" style="padding: 0.5rem 1rem;">Salir</button>
+                </div>
             </div>
-        </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
+    <!-- MOBILE SIDEBAR -->
+    <aside class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-menu__nav">
+            <a href="#cursos" class="mobile-menu__link">Cursos</a>
+            <a href="#bootcamps" class="mobile-menu__link">Bootcamps</a>
+            <a href="#areas" class="mobile-menu__link">Áreas</a>
+            <a href="#benefits" class="mobile-menu__link">Beneficios</a>
+            <a href="#comentarios" class="mobile-menu__link">Comunidad</a>
+            <a href="#contacto" class="mobile-menu__link">Contacto</a>
+        </nav>
+        <div class="mobile-menu__footer">
+            <button class="btn btn--primary btn--block open-auth-btn">Acceso Estudiante</button>
+        </div>
+    </aside>
+
     <!-- AUTH MODAL -->
-    <div id="auth-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button id="close-modal" class="close-btn">&times;</button>
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-modal" class="modal__close" aria-label="Cerrar modal">&times;</button>
+            
             <div class="auth-tabs">
-                <button id="tab-login" class="tab-btn active">Ingresar</button>
-                <button id="tab-register" class="tab-btn">Registrarse</button>
+                <button id="tab-login" class="auth-tab auth-tab--active">Ingresar</button>
+                <button id="tab-register" class="auth-tab">Registrarse</button>
             </div>
             
             <!-- Login Form -->
             <form id="login-form" class="auth-form">
-                <h3>Bienvenido de nuevo</h3>
-                <input type="email" id="login-email" placeholder="Correo electrónico" required>
-                <input type="password" id="login-password" placeholder="Contraseña" required>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Iniciar Sesión</button>
+                <h3 class="section__title" style="font-size: 1.5rem; margin-bottom: 1rem;">Bienvenido</h3>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--block">Iniciar Sesión</button>
                 <p id="login-error" class="error-msg hidden"></p>
             </form>
 
             <!-- Register Form -->
             <form id="register-form" class="auth-form hidden">
-                <h3>Crea tu cuenta</h3>
-                <input type="email" id="reg-email" placeholder="Correo electrónico" required>
-                <input type="password" id="reg-password" placeholder="Contraseña" required>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Registrarse</button>
+                <h3 class="section__title" style="font-size: 1.5rem; margin-bottom: 1rem;">Nueva Cuenta</h3>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" id="reg-email" class="form-control" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" id="reg-password" class="form-control" placeholder="Mín. 6 caracteres" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--block">Registrarse</button>
                 <p id="reg-error" class="error-msg hidden"></p>
-                <p id="reg-success" class="success-msg hidden">¡Cuenta creada! Revisa tu correo o intenta iniciar sesión.</p>
+                <p id="reg-success" class="success-msg hidden">¡Éxito! Revisa tu correo.</p>
             </form>
         </div>
     </div>
@@ -67,368 +109,304 @@
     <main>
         <!-- HERO SECTION -->
         <section class="hero reveal">
-            <h1>Talento Tech - Aprende tecnología para el futuro</h1>
-            <p>Impulsa tu carrera con nuestros bootcamps y programas de formación en Tecnologías de la Información y las
-                Comunicaciones (TIC). Especialízate en las habilidades más demandadas.</p>
-            <div class="hero-btns">
-                <a href="#cursos" class="btn btn-primary">Explorar cursos</a>
-                <a href="#areas" class="btn" style="margin-left: 1rem;">Ver áreas</a>
+            <h1 class="hero__title">Talento Tech: Tu futuro en tecnología empieza aquí</h1>
+            <p class="hero__subtitle">Bootcamps intensivos y programas especializados diseñados para convertirte en el profesional que la industria TIC demanda hoy.</p>
+            <div class="hero__actions">
+                <a href="#cursos" class="btn btn--primary">Explorar Cursos</a>
+                <a href="#areas" class="btn">Ver Áreas</a>
             </div>
         </section>
 
-        <!-- SEARCH AND FILTER BAR -->
-        <section class="filters-section reveal">
+        <!-- FILTERS -->
+        <section class="filters reveal">
             <div class="filter-bar">
-                <div class="filter-group">
-                    <label>Buscar</label>
-                    <input type="text" placeholder="Ej: Python, React, Data...">
+                <div class="form-group">
+                    <label class="form-label">Buscar</label>
+                    <input type="text" class="form-control" placeholder="Ej: Python, React...">
                 </div>
-                <div class="filter-group">
-                    <label>Área de Tecnología</label>
-                    <select>
+                <div class="form-group">
+                    <label class="form-label">Tecnología</label>
+                    <select class="form-control">
                         <option>Todas las áreas</option>
-                        <option>Software Development</option>
-                        <option>Artificial Intelligence</option>
+                        <option>Software</option>
+                        <option>IA & Data</option>
                         <option>Cybersecurity</option>
-                        <option>Data Science</option>
-                        <option>Cloud Computing</option>
+                        <option>Cloud</option>
                     </select>
                 </div>
-                <div class="filter-group">
-                    <label>Nivel</label>
-                    <select>
-                        <option>Todos los niveles</option>
-                        <option>Principiante</option>
-                        <option>Intermedio</option>
+                <div class="form-group">
+                    <label class="form-label">Nivel</label>
+                    <select class="form-control">
+                        <option>Todos</option>
+                        <option>Inicial</option>
                         <option>Avanzado</option>
                     </select>
                 </div>
-                <div class="filter-group">
-                    <label>Formato</label>
-                    <select>
-                        <option>Todos los formatos</option>
+                <div class="form-group">
+                    <label class="form-label">Formato</label>
+                    <select class="form-control">
+                        <option>Todos</option>
                         <option>Online</option>
                         <option>Híbrido</option>
-                        <option>Presencial</option>
                     </select>
                 </div>
             </div>
         </section>
 
-        <!-- TECHNOLOGY AREAS -->
-        <section id="areas" class="reveal" style="padding: 4rem 5% 0;">
-            <h2 class="section-title">Áreas de Especialización</h2>
-            <div class="areas-grid">
-                <div class="area-card">
-                    <i data-lucide="code" class="area-icon"></i>
-                    <h3>Software Development</h3>
-                    <p>Web, Mobile, Fullstack.</p>
+        <!-- SPECIALIZATION AREAS -->
+        <section id="areas" class="section reveal">
+            <h2 class="section__title">Áreas de Especialización</h2>
+            <p class="section__desc">Enfócate en la ruta que más te apasione con currículos actualizados permanentemente.</p>
+            <div class="grid grid--areas">
+                <div class="card area-card">
+                    <i data-lucide="code" class="area-card__icon"></i>
+                    <h3>Software Dev</h3>
+                    <p>Web y Mobile Apps.</p>
                 </div>
-                <div class="area-card">
-                    <i data-lucide="brain-circuit" class="area-icon"></i>
-                    <h3>Artificial Intelligence</h3>
-                    <p>Machine Learning, LLMs.</p>
+                <div class="card area-card">
+                    <i data-lucide="brain-circuit" class="area-card__icon"></i>
+                    <h3>Inteligencia Artificial</h3>
+                    <p>Machine Learning y LLMs.</p>
                 </div>
-                <div class="area-card">
-                    <i data-lucide="shield-check" class="area-icon"></i>
-                    <h3>Cybersecurity</h3>
-                    <p>Red Team, Blue Team.</p>
+                <div class="card area-card">
+                    <i data-lucide="shield-check" class="area-card__icon"></i>
+                    <h3>Ciberseguridad</h3>
+                    <p>Protección y Pentesting.</p>
                 </div>
-                <div class="area-card">
-                    <i data-lucide="database" class="area-icon"></i>
-                    <h3>Data Science</h3>
-                    <p>Big Data, Análisis.</p>
-                </div>
-                <div class="area-card">
-                    <i data-lucide="cloud" class="area-icon"></i>
+                <div class="card area-card">
+                    <i data-lucide="cloud" class="area-card__icon"></i>
                     <h3>Cloud Computing</h3>
-                    <p>AWS, Azure, GCP.</p>
-                </div>
-                <div class="area-card">
-                    <i data-lucide="palette" class="area-icon"></i>
-                    <h3>UX/UI Design</h3>
-                    <p>User Experience, Interfaces.</p>
-                </div>
-                <div class="area-card">
-                    <i data-lucide="settings" class="area-icon"></i>
-                    <h3>DevOps</h3>
-                    <p>CI/CD, Kubernetes.</p>
-                </div>
-                <div class="area-card">
-                    <i data-lucide="radio" class="area-icon"></i>
-                    <h3>Networking</h3>
-                    <p>Infraestructura, Redes.</p>
-                </div>
-                <div class="area-card">
-                    <i data-lucide="trending-up" class="area-icon"></i>
-                    <h3>Digital Marketing</h3>
-                    <p>Growth, Estrategia.</p>
+                    <p>AWS, Azure y GCP.</p>
                 </div>
             </div>
         </section>
 
-        <!-- FEATURED BOOTCAMPS -->
-        <section id="bootcamps" class="reveal" style="padding: 6rem 5% 0;">
-            <h2 class="section-title">Bootcamps Destacados</h2>
-            <div class="bootcamps-grid">
-                <div class="bootcamp-card">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"
-                        alt="Fullstack Bootcamp">
-                    <div class="bootcamp-content">
+        <!-- BOOTCAMPS -->
+        <section id="bootcamps" class="section reveal" style="background: rgba(17, 34, 64, 0.3);">
+            <h2 class="section__title">Bootcamps Destacados</h2>
+            <p class="section__desc">Inmersión total para una transformación profesional rápida y efectiva.</p>
+            <div class="grid grid--bootcamps">
+                <div class="card bootcamp-card">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Fullstack" class="bootcamp-card__img">
+                    <div class="bootcamp-card__content">
                         <span class="badge">Especialización</span>
                         <h3>Fullstack Developer Pro</h3>
-                        <p>Domina el desarrollo web moderno desde el frontend hasta el backend. Aprende React, Node.js y
-                            bases de datos NoSQL.</p>
-                        <div style="margin: 1.5rem 0; font-size: 0.85rem; color: var(--cyan);">
-                            <span>📍 Híbrido</span> • <span>⌛ 24 Semanas</span> • <span>📶 Avanzado</span>
+                        <p>Domina React, Node.js y bases de datos NoSQL con proyectos reales.</p>
+                        <div class="bootcamp-card__meta">
+                            <span>📍 Híbrido</span> • <span>⌛ 24 Sem.</span> • <span>📶 Pro</span>
                         </div>
-                        <button class="btn btn-primary" style="width: 100%;">Ver programa</button>
+                        <button class="btn btn--primary btn--block" style="margin-top: 1.5rem;">Ver Programa</button>
                     </div>
                 </div>
-                <div class="bootcamp-card">
-                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80"
-                        alt="AI Bootcamp">
-                    <div class="bootcamp-content">
-                        <span class="badge">Especialización</span>
+                <div class="card bootcamp-card">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80" alt="AI Specialist" class="bootcamp-card__img">
+                    <div class="bootcamp-card__content">
+                        <span class="badge">Intensivo</span>
                         <h3>Machine Learning Specialist</h3>
-                        <p>Aprende a construir modelos predictivos, redes neuronales y aplicaciones de IA generativa con
-                            Python y TensorFlow.</p>
-                        <div style="margin: 1.5rem 0; font-size: 0.85rem; color: var(--cyan);">
-                            <span>📍 Online</span> • <span>⌛ 20 Semanas</span> • <span>📶 Avanzado</span>
+                        <p>Construye modelos predictivos y aplicaciones de IA Generativa.</p>
+                        <div class="bootcamp-card__meta">
+                            <span>📍 Online</span> • <span>⌛ 20 Sem.</span> • <span>📶 Avanzado</span>
                         </div>
-                        <button class="btn btn-primary" style="width: 100%;">Ver programa</button>
+                        <button class="btn btn--primary btn--block" style="margin-top: 1.5rem;">Ver Programa</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- LEARNING PATH SECTION -->
-        <section class="roadmap-section reveal">
-            <h2 class="section-title">Tu Ruta de Aprendizaje</h2>
-            <p>Diseñamos un camino claro para que pases de cero a experto en la industria TIC.</p>
-            <div class="roadmap-container">
-                <div class="roadmap-step">
-                    <div class="step-circle">01</div>
-                    <h4>Principiante</h4>
-                    <p>Fundamentos y lógica de programación.</p>
+        <!-- ROADMAP -->
+        <section class="section reveal">
+            <h2 class="section__title">Tu Ruta al Éxito</h2>
+            <div class="roadmap">
+                <div class="roadmap__item">
+                    <div class="roadmap__number">01</div>
+                    <h4>Fundamentos</h4>
+                    <p>Lógica y bases técnicas.</p>
                 </div>
-                <div class="roadmap-step">
-                    <div class="step-circle" style="border-style: dotted;">02</div>
-                    <h4>Intermedio</h4>
-                    <p>Entornos de desarrollo y frameworks.</p>
+                <div class="roadmap__item">
+                    <div class="roadmap__number">02</div>
+                    <h4>Especialidad</h4>
+                    <p>Herramientas y frameworks.</p>
                 </div>
-                <div class="roadmap-step">
-                    <div class="step-circle">03</div>
-                    <h4>Avanzado</h4>
-                    <p>Arquitectura, escalabilidad y testing.</p>
+                <div class="roadmap__item">
+                    <div class="roadmap__number">03</div>
+                    <h4>Práctica</h4>
+                    <p>Proyectos en equipo.</p>
                 </div>
-                <div class="roadmap-step">
-                    <div class="step-circle" style="background: var(--cyan); color: var(--bg-deep);">04</div>
-                    <h4>Bootcamp</h4>
-                    <p>Especialización intensiva y portafolio.</p>
+                <div class="roadmap__item">
+                    <div class="roadmap__number">04</div>
+                    <h4>Empleo</h4>
+                    <p>Habilidades para la industria.</p>
                 </div>
             </div>
         </section>
 
-        <!-- FULL COURSE CATALOG -->
-        <section id="cursos" class="reveal" style="padding: 4rem 5% 0;">
-            <h2 class="section-title">Catálogo Completo</h2>
-            <div class="course-grid">
+        <!-- CATALOG -->
+        <section id="cursos" class="section reveal">
+            <h2 class="section__title">Catálogo Completo</h2>
+            <div class="grid grid--courses">
                 <!-- Course 1 -->
-                <div class="course-card">
+                <div class="card course-card">
                     <span class="badge">Software</span>
                     <h3>Introducción a Python</h3>
-                    <p>Aprende los conceptos básicos del lenguaje más versátil.</p>
-                    <div style="font-size: 0.8rem; margin: 1rem 0;">
+                    <p>Conceptos básicos del lenguaje más versátil del mundo.</p>
+                    <div style="font-size: 0.8rem; margin: 1rem 0; color: var(--clr-cyan);">
                         <span>⌛ 40 hrs</span> | <span>📶 Inicial</span> | <span>🌐 Online</span>
                     </div>
-                    <button class="btn" style="width:100%">Inscribirme</button>
+                    <button class="btn btn--block">Inscribirme</button>
                 </div>
                 <!-- Course 2 -->
-                <div class="course-card">
+                <div class="card course-card">
                     <span class="badge">Cloud</span>
                     <h3>AWS Cloud Essentials</h3>
-                    <p>Fundamentos de computación en la nube y servicios AWS.</p>
-                    <div style="font-size: 0.8rem; margin: 1rem 0;">
+                    <p>Fundamentos de computación en la nube para empresas.</p>
+                    <div style="font-size: 0.8rem; margin: 1rem 0; color: var(--clr-cyan);">
                         <span>⌛ 32 hrs</span> | <span>📶 Inicial</span> | <span>🌐 Online</span>
                     </div>
-                    <button class="btn" style="width:100%">Inscribirme</button>
+                    <button class="btn btn--block">Inscribirme</button>
                 </div>
                 <!-- Course 3 -->
-                <div class="course-card">
-                    <span class="badge">Data</span>
-                    <h3>Visualización con Power BI</h3>
-                    <p>Crea dashboards impactantes y toma decisiones basadas en datos.</p>
-                    <div style="font-size: 0.8rem; margin: 1rem 0;">
-                        <span>⌛ 25 hrs</span> | <span>📶 Intermedio</span> | <span>🏢 Presencial</span>
-                    </div>
-                    <button class="btn" style="width:100%">Inscribirme</button>
-                </div>
-                <!-- Course 4 -->
-                <div class="course-card">
-                    <span class="badge">Cyber</span>
-                    <h3>Hacking Ético 101</h3>
-                    <p>Conceptos de seguridad informática y pruebas de penetración.</p>
-                    <div style="font-size: 0.8rem; margin: 1rem 0;">
-                        <span>⌛ 60 hrs</span> | <span>📶 Intermedio</span> | <span>📍 Híbrido</span>
-                    </div>
-                    <button class="btn" style="width:100%">Inscribirme</button>
-                </div>
-                <!-- Course 5 -->
-                <div class="course-card">
+                <div class="card course-card">
                     <span class="badge">UX/UI</span>
-                    <h3>Diseño de Interfaces (Figma)</h3>
+                    <h3>Figma for Devs</h3>
                     <p>Diseña prototipos modernos y centrados en el usuario.</p>
-                    <div style="font-size: 0.8rem; margin: 1rem 0;">
+                    <div style="font-size: 0.8rem; margin: 1rem 0; color: var(--clr-cyan);">
                         <span>⌛ 30 hrs</span> | <span>📶 Inicial</span> | <span>🌐 Online</span>
                     </div>
-                    <button class="btn" style="width:100%">Inscribirme</button>
-                </div>
-                <!-- Course 6 -->
-                <div class="course-card">
-                    <span class="badge">DevOps</span>
-                    <h3>Docker & Containers</h3>
-                    <p>Orquestación y despliegue de microservicios eficientes.</p>
-                    <div style="font-size: 0.8rem; margin: 1rem 0;">
-                        <span>⌛ 45 hrs</span> | <span>📶 Avanzado</span> | <span>🌐 Online</span>
-                    </div>
-                    <button class="btn" style="width:100%">Inscribirme</button>
+                    <button class="btn btn--block">Inscribirme</button>
                 </div>
             </div>
         </section>
 
-        <!-- BENEFITS SECTION -->
-        <section id="benefits" class="benefits-section reveal">
-            <h2 class="section-title">Por qué elegir Talento Tech</h2>
-            <div class="benefits-grid">
+        <!-- BENEFITS -->
+        <section id="benefits" class="section benefits reveal">
+            <h2 class="section__title">Ventaja Talento Tech</h2>
+            <div class="grid grid--areas">
                 <div class="benefit-item">
-                    <i data-lucide="target" style="color:var(--cyan); margin-bottom: 1rem;"></i>
-                    <h3>Enfoque en la Industria</h3>
-                    <p>Currículos diseñados por expertos que trabajan en las mejores tech companies.</p>
+                    <i data-lucide="target"></i>
+                    <h3>Industry-First</h3>
+                    <p>Mentores activos en las mejores tech companies.</p>
                 </div>
                 <div class="benefit-item">
-                    <i data-lucide="award" style="color:var(--cyan); margin-bottom: 1rem;"></i>
-                    <h3>Certificación Avalada</h3>
-                    <p>Recibe un certificado que respalda tus conocimientos técnicos ante reclutadores.</p>
+                    <i data-lucide="award"></i>
+                    <h3>Certificación</h3>
+                    <p>Avalado por líderes de la industria tecnológica.</p>
                 </div>
                 <div class="benefit-item">
-                    <i data-lucide="folder-kanban" style="color:var(--cyan); margin-bottom: 1rem;"></i>
-                    <h3>Proyectos Prácticos</h3>
-                    <p>Construye un portafolio real con casos de uso del mundo empresarial actual.</p>
-                </div>
-                <div class="benefit-item">
-                    <i data-lucide="rocket" style="color:var(--cyan); margin-bottom: 1rem;"></i>
-                    <h3>Job-ready Skills</h3>
-                    <p>Te preparamos con las habilidades blandas y técnicas para tu primer empleo IT.</p>
+                    <i data-lucide="rocket"></i>
+                    <h3>Job Ready</h3>
+                    <p>Portafolio real desarrollado durante el curso.</p>
                 </div>
             </div>
         </section>
 
-        <!-- FINAL CALL TO ACTION -->
-        <section class="final-cta reveal">
-            <h2>Empieza tu camino en tecnología hoy mismo</h2>
-            <p>Únete a los miles de estudiantes que ya están transformando su futuro con Talento Tech.</p>
-            <button class="btn btn-primary" style="margin-top: 2rem; font-size: 1.2rem; padding: 1.2rem 3rem;">Explorar
-                todos los programas</button>
+        <!-- CTA -->
+        <section class="section reveal" style="text-align: center;">
+            <h2 class="section__title">¿Listo para transformar tu carrera?</h2>
+            <p class="section__desc">Únete a la comunidad tecnológica más grande del país.</p>
+            <button class="btn btn--primary" style="padding: 1.2rem 3rem; font-size: 1.1rem;">Comenzar Ahora</button>
         </section>
-        <!-- COMMENTS SECTION -->
-        <section id="comentarios" class="reveal" style="padding: 6rem 5%;">
+
+        <!-- COMMENTS -->
+        <section id="comentarios" class="section reveal">
             <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 class="section-title" style="margin-bottom: 0.5rem;">Comunidad Talento Tech</h2>
-                <p style="color: var(--cyan); font-size: 0.9rem;">
+                <h2 class="section__title">Nuestra Comunidad</h2>
+                <div style="color: var(--clr-cyan); font-size: 0.9rem;">
                     <i data-lucide="message-square" style="width: 16px; margin-right: 5px; vertical-align: middle;"></i>
-                    <span id="comment-count">0</span> comentarios publicados
-                </p>
+                    <span id="comment-count">0</span> testimonios reales
+                </div>
             </div>
-            <div class="comments-container" style="max-width: 800px; margin: 0 auto;">
-                <!-- Auth Guard for Comments Form -->
-                <div id="comment-auth-guard" class="auth-guard-notice" style="background: var(--bg-card); padding: 3rem; border-radius: 12px; text-align: center; margin-bottom: 3rem; border: 1px dashed var(--cyan);">
-                    <i data-lucide="lock" style="width: 48px; height: 48px; color: var(--cyan); margin-bottom: 1rem;"></i>
-                    <h3>Acceso Restringido</h3>
-                    <p>Debes iniciar sesión o crear una cuenta para usar esta función.</p>
-                    <button class="btn btn-primary open-auth-btn" style="margin-top: 1.5rem;">Iniciar Sesión ahora</button>
+
+            <div class="comments-container">
+                <!-- Auth Guard -->
+                <div id="comment-auth-guard" class="card" style="text-align: center; padding: var(--sp-lg); border-style: dashed;">
+                    <i data-lucide="lock" style="width: 48px; height: 48px; color: var(--clr-cyan); margin-bottom: 1rem;"></i>
+                    <h3>Acceso Privado</h3>
+                    <p>Inicia sesión para compartir tu experiencia.</p>
+                    <button class="btn btn--primary open-auth-btn" style="margin-top: 1.5rem;">Iniciar Sesión</button>
                 </div>
 
-                <!-- Form to add comment (Hidden if not logged in) -->
-                <div id="comment-form-wrapper" class="comment-form-card hidden" style="background: var(--bg-card); padding: 2rem; border-radius: 12px; margin-bottom: 3rem; border: 1px solid rgba(100, 255, 218, 0.1);">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--cyan);">Deja tu comentario</h3>
-                    <form id="comment-form" style="display: flex; flex-direction: column; gap: 1rem;">
-                        <input type="text" id="comment-name" placeholder="Tu nombre" required 
-                               style="padding: 0.8rem; background: var(--navy-light); color: var(--white-text); border-radius: 4px; border: 1px solid transparent; width: 100%;">
-                        <textarea id="comment-text" placeholder="Escribe tu comentario aquí..." required
-                                  style="padding: 0.8rem; background: var(--navy-light); color: var(--white-text); border-radius: 4px; border: 1px solid transparent; min-height: 100px; width: 100%;"></textarea>
-                        <button type="submit" class="btn btn-primary" id="submit-comment" style="align-self: flex-start;">Publicar Comentario</button>
+                <!-- Form -->
+                <div id="comment-form-wrapper" class="card hidden">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--clr-cyan);">Cuéntanos tu historia</h3>
+                    <form id="comment-form">
+                        <div class="form-group">
+                            <input type="text" id="comment-name" class="form-control" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="comment-text" class="form-control" placeholder="¿Cómo ha sido tu experiencia con nosotros?" required style="min-height: 100px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary" id="submit-comment">Enviar Comentario</button>
                     </form>
                 </div>
 
-                <!-- List of comments -->
-                <div id="comments-list" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <!-- Comments will be loaded here dynamically -->
-                    <p style="text-align: center; color: var(--grey-text);">Cargando comentarios...</p>
+                <div id="comments-list" style="margin-top: 3rem;">
+                    <p style="text-align: center; color: var(--clr-grey-dark);">Sincronizando comunidad...</p>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
-        <section id="contacto" class="reveal" style="padding: 6rem 5%; background: var(--bg-card);">
-            <h2 class="section-title">¿Tienes preguntas? Contáctanos</h2>
-            <div style="max-width: 600px; margin: 0 auto;">
-                <form action="https://formspree.io/f/xkoqjwjj" method="POST"
-                    style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div class="filter-group">
-                        <label>Nombre Completo</label>
-                        <input type="text" name="name" placeholder="Tu nombre" required>
+        <!-- CONTACT -->
+        <section id="contacto" class="section reveal" style="background: var(--clr-bg-card);">
+            <div class="container" style="max-width: 600px;">
+                <h2 class="section__title">Hablemos</h2>
+                <p class="section__desc">¿Dudas sobre un bootcamp? Resolvemos todas tus inquietudes.</p>
+                <form action="https://formspree.io/f/xkoqjwjj" method="POST">
+                    <div class="form-group">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" name="name" class="form-control" placeholder="Tu nombre completo" required>
                     </div>
-                    <div class="filter-group">
-                        <label>Correo Electrónico</label>
-                        <input type="email" name="email" placeholder="tu@email.com" required>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="tu@email.com" required>
                     </div>
-                    <div class="filter-group">
-                        <label>Mensaje</label>
-                        <textarea name="message" placeholder="¿En qué podemos ayudarte?"
-                            style="width: 100%; padding: 0.8rem; background: var(--navy-light); color: var(--white-text); border-radius: 4px; border: 1px solid transparent; min-height: 150px; font-family: inherit;"></textarea>
+                    <div class="form-group">
+                        <label class="form-label">Mensaje</label>
+                        <textarea name="message" class="form-control" placeholder="Cuéntanos tus dudas..." required style="min-height: 120px;"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="align-self: flex-start; width: 100%;">Enviar
-                        Mensaje</button>
+                    <button type="submit" class="btn btn--primary btn--block">Enviar Mensaje</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer class="reveal">
-        <div>
-            <div class="logo">TALENTO TECH</div>
-            <p style="max-width:300px; margin-top: 1rem;">Educación de alto impacto para los profesionales del mañana.
-            </p>
+    <!-- FOOTER -->
+    <footer class="footer reveal">
+        <div class="footer__col">
+            <div class="logo">
+                <i data-lucide="zap"></i>
+                <span>TALENTO TECH</span>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">Formación de alto nivel para los profesionales que están construyendo el futuro digital.</p>
         </div>
-        <div>
-            <h4>Plataforma</h4>
-            <ul style="margin-top: 1rem; font-size: 0.9rem;">
-                <li><a href="#">Cursos</a></li>
-                <li><a href="#">Bootcamps</a></li>
-                <li><a href="#">Mentores</a></li>
-                <li><a href="#">Alianzas</a></li>
+        <div class="footer__col">
+            <h4 class="footer__title">Aprende</h4>
+            <ul class="footer__list">
+                <li><a href="#" class="footer__link">Cursos Online</a></li>
+                <li><a href="#" class="footer__link">Bootcamps IA</a></li>
+                <li><a href="#" class="footer__link">Web Development</a></li>
+                <li><a href="#" class="footer__link">Ciberseguridad</a></li>
             </ul>
         </div>
-        <div>
-            <h4>Comunidad</h4>
-            <ul style="margin-top: 1rem; font-size: 0.9rem;">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Eventos</a></li>
-                <li><a href="#">Casos de éxito</a></li>
+        <div class="footer__col">
+            <h4 class="footer__title">Nosotros</h4>
+            <ul class="footer__list">
+                <li><a href="#" class="footer__link">Mentores</a></li>
+                <li><a href="#" class="footer__link">Casos de Éxito</a></li>
+                <li><a href="#" class="footer__link">Blog Tech</a></li>
+                <li><a href="#" class="footer__link">Contacto</a></li>
             </ul>
         </div>
-        <div>
-            <h4>Newsletter</h4>
-            <p style="font-size: 0.85rem; margin: 1rem 0;">Recibe las últimas noticias de tecnología.</p>
-            <form action="https://formspree.io/f/xkoqjwjj" method="POST" style="display:flex; gap: 0.5rem;">
-                <input type="email" name="email" placeholder="Email" required
-                    style="padding: 0.5rem; background: var(--navy-light); color: white; border-radius: 4px; border: none; outline: none; flex-grow: 1;">
-                <button type="submit" class="btn btn-primary">Ok</button>
+        <div class="footer__col">
+            <h4 class="footer__title">Unete</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 1rem;">Suscríbete para recibir eventos y becas.</p>
+            <form action="https://formspree.io/f/xkoqjwjj" method="POST" style="display: flex; gap: 0.5rem;">
+                <input type="email" name="email" class="form-control" placeholder="Email" required style="padding: 0.5rem;">
+                <button type="submit" class="btn btn--primary">OK</button>
             </form>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
